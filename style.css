@@ -18,7 +18,8 @@
 }
 
 @media (max-width:768px) {
-  .todo-logo { text-align: center;
+  .todo-logo { 
+    text-align: center;
   }
 }
 .todo-container {
