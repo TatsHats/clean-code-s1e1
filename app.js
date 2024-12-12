@@ -8,8 +8,8 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-var taskInput=document.querySelector("add-task__input");//Add a new task.
-var addButton = document.querySelector(".add-task__button");//first button
+var taskInput=document.getElementById("new-task");//Add a new task.
+var addButton=document.getElementsByTagName("button")[0];//first button
 var incompleteTaskHolder=document.getElementById("incompleted-tasks");//ul of #incompleteTasks
 var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
 
@@ -18,18 +18,31 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 var createNewTaskElement=function(taskString){
 
     var listItem=document.createElement("li");
+    listItem.className = "todo-task__list-el list-el";
 
     //input (checkbox)
     var checkBox=document.createElement("input");//checkbx
+    checkBox.type = "checkbox";
+    checkBox.className = "todo-task__checkbox checkbox";
+
     //label
     var label=document.createElement("label");//label
+    label.innerText = taskString;
+    label.className = "todo-task__label task";
+
     //input (text)
     var editInput=document.createElement("input");//text
+    editInput.type = "text";
+    editInput.className = "todo-task__input input";
+
     //button.edit
     var editButton=document.createElement("button");//edit button
+    editButton.innerText = "Edit";
+    editButton.className = "todo-task__button-edit edit button";
 
     //button.delete
     var deleteButton=document.createElement("button");//delete button
+
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
@@ -38,12 +51,12 @@ var createNewTaskElement=function(taskString){
     //Each elements, needs appending
     checkBox.type="checkbox";
     editInput.type="text";
-    editInput.className="task";
+    editInput.className="todo-task__checkbox-none input";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+    editButton.className="todo-task__button-edit edit button";
 
-    deleteButton.className="delete";
+    deleteButton.className="todo-task__button-delete delete button";
     deleteButtonImg.src='./remove.svg';
     deleteButton.appendChild(deleteButtonImg);
 
@@ -85,7 +98,7 @@ var editTask=function(){
     var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("edit-mode");
+    var containsClass=listItem.classList.contains("todo-task__list-el-edit");
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -99,7 +112,7 @@ var editTask=function(){
     }
 
     //toggle .edit-mode on the parent.
-    listItem.classList.toggle("edit-mode");
+    listItem.classList.toggle("todo-task__list-el-edit");
 };
 
 

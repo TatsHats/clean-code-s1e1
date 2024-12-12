@@ -28,9 +28,9 @@
   <main class="container">
     <section class="add-task">
       <form id="add-task">
-        <h2 class="add-task__header header">Add Item</h2>
+        <label class="add-task__header header" for="new-task">Add Item</label>
         <div class="add-task__row">
-          <input class="add-task__input input" type="text">
+          <input class="add-task__input input" id="new-task" type="text">
           <button class="add-task__button button" type="button">Add</button>
         </div>
       </form> 
@@ -41,7 +41,7 @@
       <ul class="todo-task__list list" id="incompleted-tasks">
         <li class="todo-task__list-el list-el">
           <input class="todo-task__checkbox checkbox" type="checkbox">
-          <label class="todo-task__label label">Pay Bills</label>
+          <label class="todo-task__label task">Pay Bills</label>
           <input class="todo-task__checkbox-none input" type="text">
           <button class="todo-task__button-edit edit button" type="button">Edit</button>
           <button class="todo-task__button-delete delete button" type="button">
@@ -50,7 +50,7 @@
         </li>
         <li class="todo-task__list-el-edit list-el">
           <input class="todo-task__checkbox checkbox" type="checkbox">
-          <label class="todo-task__label-edit label">Go Shopping</label>
+          <label class="todo-task__label-edit task">Go Shopping</label>
           <input class="todo-task__input input" value="Go Shopping" type="text">
           <button class="todo-task__button-edit edit button" type="button">Save</button>
           <button class="todo-task__button-delete delete button" type="button">
@@ -64,11 +64,11 @@
       <h2 class="completed-task__header header" id="completed-task">Completed</h2>
       <ul class="completed-task__list list" id="completed-tasks">
         <li class="completed-task__list-el list-el">
-          <input class="todo-task__checkbox checkbox" type="checkbox" checked>
-          <label class="completed-task__label label">See the Doctor</label>
-          <input class="todo-task__input input" type="text">
-          <button class="todo-task__button-edit edit button" type="button">Edit</button>
-          <button class="todo-task__button-delete delete button" type="button">
+          <input class="completed__checkbox checkbox" type="checkbox" checked>
+          <label class="completed-task__label task">See the Doctor</label>
+          <input class="completed__input input" type="text">
+          <button class="completed__button-edit edit button" type="button">Edit</button>
+          <button class="completed__button-delete delete button" type="button">
             <img src="./remove.svg" alt="delete Edit img">
           </button>
         </li>
