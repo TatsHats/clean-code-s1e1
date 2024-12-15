@@ -28,12 +28,12 @@ var createNewTaskElement=function(taskString){
     //label
     var label=document.createElement("label");//label
     label.innerText = taskString;
-    label.className = "todo-task__label task";
+    label.className = "task";
 
     //input (text)
     var editInput=document.createElement("input");//text
     editInput.type = "text";
-    editInput.className = "todo-task__input input";
+    editInput.className = "input";
 
     //button.edit
     var editButton=document.createElement("button");//edit button
@@ -51,7 +51,7 @@ var createNewTaskElement=function(taskString){
     //Each elements, needs appending
     checkBox.type="checkbox";
     editInput.type="text";
-    editInput.className="todo-task__input-none input";
+    editInput.className="input";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
     editButton.className="edit button";
@@ -91,7 +91,6 @@ var addTask=function(){
 var editTask=function(){
     console.log("Edit Task...");
     console.log("Change 'edit' to 'save'");
-
 
     var listItem=this.parentNode;
 

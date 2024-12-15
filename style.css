@@ -27,7 +27,6 @@
   }
 }
 
-
 /* container */
 .container {
   display: block;
@@ -84,8 +83,6 @@
   padding: 30px 0 10px;
   margin: 0;
   text-transform: uppercase;
-  display: block;
-  margin: 0 0 20px;
 }
 
 .input {
@@ -106,8 +103,14 @@
 }
 
 /* New Task */
+.add-task .header {
+  display: block;
+  margin: 0 0 20px;
+}
+
 .add-task__input {
   width: 318px;
+  
 }
 
 /* Task list */
@@ -156,15 +159,15 @@
 }
 
 /* Edit Task */
-.todo-task__list-el-edit .todo-task__input {
+.list-el .input {
   display: none;
 }
 
-.todo-task__list-el-edit .todo-task__input {
+.todo-task__list-el-edit .input {
   display: inline-block;
   width: 224px;
 }
 
-.todo-task__label-edit {
+.todo-task__list-el-edit .task {
   display: none;
 }
